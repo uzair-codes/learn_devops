@@ -1,0 +1,19 @@
+---
+
+- name: Creating Cron Jobs
+  hosts: all
+  become: true
+  tasks:
+  - name: Cron Job
+    cron:
+        name: Checking Uptime Every 2 Min
+        # state: absent   # Remove Cron JOb
+        # You actually don't need to specify all fields. Because other fields default to *.
+        minute: "*/2"
+        # hour: "*"
+        # day: "*"
+        # month: "*"
+        # weekday: "*"
+        user: ubuntu
+        job: uptime >> "/home/ubuntu/uptime.txt"
+        disabled: true

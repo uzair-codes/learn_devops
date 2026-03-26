@@ -1,0 +1,24 @@
+---
+
+- name: User and Group Management
+  hosts: all
+  become: true
+  tasks:
+
+  - name: Create Group
+    group:
+      name: uzair
+      state: present
+      # state: absent  # Delete Group
+
+  - name: Create user
+    user:
+      name: uzair
+      # shell: /bin/bash
+      groups: uzair
+      append: true
+      # home: /home/uzair
+      ## Unless set to false, a home directory will be made for the user when the account is created or if the home directory does not exist.
+      # create_home: true
+      # state: present
+      # state: absent   # Delete User

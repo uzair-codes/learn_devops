@@ -1,0 +1,20 @@
+---
+- name: Install and Start Service
+  hosts: Role_web
+  become: true
+  vars:
+    pkgs: nginx
+
+  tasks:
+  - name: Install packages
+    apt:
+      name: "{{ pkgs }}"
+      state: present
+    tags: install_nginx
+
+  - name: Start/Stop nginx
+    service:
+      name: "{{ pkgs }}"
+      state: stopped
+      enabled: true
+    tags: start_nginx

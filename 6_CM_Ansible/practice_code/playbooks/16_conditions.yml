@@ -1,0 +1,22 @@
+---
+- name: Install and Start Service
+  hosts: Role_web
+  become: true
+
+  tasks:
+
+  - name: Update apt cache "sudo apt  update"
+    apt:
+      update_cache: yes
+
+  - name: Install Nginx on RedHat
+    dnf:
+      name: nginx
+      state: present
+    when: ansible_os_family == "CentOS"
+
+  - name: Install Nginx on Ubuntu
+    apt:
+      name: nginx
+      state: present
+    when: ansible_os_family == "Debian"

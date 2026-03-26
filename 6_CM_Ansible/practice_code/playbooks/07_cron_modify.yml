@@ -1,0 +1,13 @@
+---
+
+- name: Creating Cron Jobs
+  hosts: all
+  become: true
+  tasks:
+  - name: Cron Job
+    cron:
+        name: VAR
+        env: yes
+        user: ubuntu
+        job: /home/ubuntu/scripts/test_script.sh
+        insertbefore: PATH

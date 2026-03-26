@@ -1,0 +1,41 @@
+# In Playbook
+# In Inventory
+# In group_vars & host_vars
+# From command line using -e "var_name=value"
+# From external files using vars_files
+# capture task output using register
+# prompt user for variable 
+# environment variable export var_name=value --> var_nm: "{{ lookup('env','var_name') }}"
+
+
+---
+- name: Install and Start Service
+  hosts: Role_web
+  become: true
+  vars:
+    pkg_name: "{{ lookup('env','PKG_NAME') }}"
+  # vars_prompt:
+  #   - name: pkg_name
+  #     prompt: "Enter Package Name"
+  #     private: false
+
+  tasks:
+  - name: Install packages
+    apt:
+      name: "{{ pkg_name }}"
+      state: present
+
+  - name: Start/Stop nginx
+    service:
+      name: "{{ pkg_name }}"
+      state: started
+      enabled: true
+
+# #####################################
+
+#   - name: Check disk space
+#     shell: df -h
+#     register: disk_output
+
+#   - debug:
+#       var: disk_output.stdout

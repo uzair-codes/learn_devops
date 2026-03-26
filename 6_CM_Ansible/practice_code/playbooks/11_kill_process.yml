@@ -1,0 +1,32 @@
+---
+- name: Managing Process
+  hosts: Role_web
+  # become: true
+
+  tasks:
+  - name: Nginx Before Kill Process Report
+    shell: ps -ef | grep nginx | grep -v grep > /home/ubuntu/bkprocess.txt
+    ignore_errors: true
+
+  - name: Fetch Nginx Before Kill Process Report
+    fetch:
+      src: /home/ubuntu/bkprocess.txt
+      dest: ../assets/bkprocess.txt
+      owner: uzair
+      group: uzair
+      mode: u=rwx
+
+  - name: Kill Nginx Process
+    # shell: pgrep nginx | xargs kill
+    shell: pkill nginx
+    become: true
+    ignore_errors: true
+
+  - name: Nginx Agter Kill Process report
+    shell: ps -ef | grep nginx | grep -v grep > /home/ubuntu/akprocess.txt
+    ignore_errors: true
+
+  - name: Fetch Nginx After Kill Process Report
+    fetch:
+      src: /home/ubuntu/akprocess.txt
+      dest: ../assets/akprocess.txt

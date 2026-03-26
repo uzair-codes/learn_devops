@@ -1,0 +1,29 @@
+---
+
+- name: Creating File and Folder
+  hosts: all
+  become: true
+  
+  tasks:
+  # - name: Creating Folder
+  #   file:
+  #     path: "/home/ubuntu/scripts"
+  #     state: directory
+  #     # state: absent # Delete folder
+  #     owner: ubuntu
+  #     group: ubuntu
+
+  # - name: Creating/Deleting File
+  #   file:
+  #     path: "/home/ubuntu/scripts/script.sh"
+  #     # state: touch
+  #     state: absent # delete file
+
+  - name: Creating/Deleting Multiple files/folders
+    file: 
+      path: "{{ item }}"
+      state: absent
+    loop:
+      - /home/ubuntu/akprocess.txt
+      - /home/ubuntu/bkprocess.txt
+      - /home/ubuntu/uptime.txt

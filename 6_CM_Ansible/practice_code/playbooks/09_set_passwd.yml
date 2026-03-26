@@ -1,0 +1,12 @@
+---
+
+- name: User and Group Management
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Create user
+    user:
+      name: uzair
+      update_password: always
+      password: "{{'uzair@5525' | password_hash('sha512')}}"

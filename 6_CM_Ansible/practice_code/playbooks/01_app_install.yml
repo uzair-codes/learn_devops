@@ -1,0 +1,30 @@
+---
+- name: Install and Start Service
+  hosts: all
+  become: true
+
+  tasks:
+
+  - name: Update apt cache "sudo apt  update"
+    apt:
+      update_cache: yes
+
+  - name: Install packages
+    apt:
+      name: 
+        - nginx
+        - net-tools
+        - firewalld
+      state: present
+
+  - name: Start/Stop firewalld
+    systemd:
+      name: firewalld
+      state: started
+      enabled: true
+
+  - name: Reload Firewalld
+    systemd:
+      name: firewalld
+      state: reloaded  
+  

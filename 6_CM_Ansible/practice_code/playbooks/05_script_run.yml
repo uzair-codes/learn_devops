@@ -1,0 +1,12 @@
+---
+
+- name: Changing Permissions
+  hosts: all
+  become: true
+  tasks:
+  - name: Run Script on Target
+    script: ../test_script.sh # runs script file present in controller on targets home directory by default
+    # shell: ./test_script.sh > output.log
+    args:
+      chdir: /home/ubuntu/scripts   # change directory to desired directory
+      # creates: /home/ubuntu/scripts/output.log

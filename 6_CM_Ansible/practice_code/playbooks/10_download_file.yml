@@ -1,0 +1,15 @@
+---
+
+- name: Download Files
+  hosts: all
+  become: true
+
+  tasks:
+  - name: get_url Module
+    get_url:
+      url: "https://www.python.org/ftp/python/pymanager/python-manager-26.0.msix"
+      dest: "/home/uzair/"
+      owner: uzair
+      group: uzair
+      mode: u+x
+      

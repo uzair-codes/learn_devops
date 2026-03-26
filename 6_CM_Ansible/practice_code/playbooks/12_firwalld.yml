@@ -1,0 +1,17 @@
+---
+- name: Managing Firewall
+  hosts: all
+  become: true
+
+  tasks:
+  - name: block nginx
+    firewalld:
+      # service: nginx # 'nginx' not among existing services
+      port: 80/tcp
+      permanent: true
+      state: enabled
+
+  - name: Reload firewalld
+    systemd:
+      name: firewalld
+      state: reloaded

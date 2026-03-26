@@ -1,0 +1,11 @@
+---
+
+- name: Changing Permissions
+  hosts: all
+  become: true
+  
+  tasks:
+  - name: Permissions
+    file:
+      path: "/home/ubuntu/scripts/test_script.sh"
+      mode: u+x
