@@ -99,17 +99,17 @@ Used in systemd-based systems.
 
 ## 3️⃣ File Management
 
-### 🔹 `copy`
+### 🔹 `copy` Module
 
-Copy static file.
+Copy static file
 
 ```yaml
-copy:
-  src: file.txt
-  dest: /tmp/file.txt
+  copy:
+    src: dist/
+    dest: /var/www/portfolio/
 ```
 
-Common arguments:
+👉 **Common arguments**
 
 * src
 * dest
@@ -117,6 +117,61 @@ Common arguments:
 * group
 * mode
 * backup
+
+👉 **Problems**
+
+* Slow for large folders, Always copies everything (even unchanged files)
+
+👉 **Best Use Cases**
+
+* Small config files
+* Single file copy
+* Templates
+
+### 🔹 `synchronize` Module
+
+```yaml
+- name: Sync dist folder
+  synchronize:
+    src: dist/
+    dest: /var/www/portfolio/
+```
+
+👉 **Advantages**
+
+✔ Only copies **changed files**
+✔ Very fast
+✔ Perfect for large folders
+✔ Production-grade
+
+👉 **Requirements**
+
+* `rsync` must be installed:
+
+  * On control node (your machine / Jenkins)
+  * On target server
+
+👉 **Important Difference (Direction)**
+
+* `mode` in `copy` ≠ `mode` in `synchronize`
+* `copy` module → `mode` = `file permissions`
+* `synchronize` module → `mode` = `transfer direction`
+* `synchronize` runs from **control node → remote** by defaule
+
+```yaml
+mode: push # Default: Push files FROM control node TO remote server
+mode: pull # Pull files FROM remote TO control node
+```
+
+👉 **Delete extra files uding `delete` argument**
+
+```yaml
+delete: yes
+```
+
+✔ Make remote EXACTLY same as local folder
+
+---
 
 ### 🔹 `template`
 
