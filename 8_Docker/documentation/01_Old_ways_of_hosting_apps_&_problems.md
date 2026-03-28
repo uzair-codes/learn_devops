@@ -9,7 +9,7 @@ Before Docker and containers, applications were hosted in **traditional ways**. 
 
 ### ❌ Physical Servers Problems
 
-#### 1. Huge Resource Wastage
+#### 1. `Huge Resource Wastage`
 
 * Servers have **CPU, RAM, Storage**
 * Most applications don’t use full resources
@@ -20,25 +20,19 @@ Before Docker and containers, applications were hosted in **traditional ways**. 
 * App uses only 2GB
   ➡️ Remaining **14GB is wasted**
 
----
-
-#### 2. High Cost
+#### 2. `High Cost`
 
 * Need separate server for each app
 * Hardware + maintenance cost is very high
 
----
-
-#### 3. Poor Scalability
+#### 3. `Poor Scalability`
 
 * If traffic increases:
 
   * You need to buy new servers
   * Setup takes time
 
----
-
-#### 4. Single Point of Failure
+#### 4. `Single Point of Failure`
 
 * If server crashes → app goes down
 
@@ -50,8 +44,6 @@ Before Docker and containers, applications were hosted in **traditional ways**. 
 
 * A **Virtual Machine** is a software-based computer
 * Created using a **Hypervisor**
-
----
 
 ### 🧠 Hypervisor
 
@@ -75,8 +67,6 @@ Before Docker and containers, applications were hosted in **traditional ways**. 
 
 * 1 server → 5 VMs → 5 applications
 
----
-
 #### 2. Isolation & Security
 
 * Each VM has:
@@ -84,8 +74,6 @@ Before Docker and containers, applications were hosted in **traditional ways**. 
   * Its own OS
   * Its own memory
 * So apps don’t affect each other
-
----
 
 #### 3. Flexibility
 
@@ -108,31 +96,25 @@ Before Docker and containers, applications were hosted in **traditional ways**. 
 
 ➡️ This consumes a lot of RAM & CPU
 
----
-
 #### 2. Heavyweight
 
 * Becasue each VM has its own complete OS, So VM size is large (GBs)
 * Boot time is slow
 
----
-
 #### 3. Less Scalability
 
-* Creating VM takes minutes
+* Creating VM takes time
 * Not suitable for fast scaling
 
 ---
 
 ## **3. Biggest Problem: "It Works on My Machine"**
 
-This is one of the **most common real-world problems**.
+This is one of the **most common real-world problem** with Physical servers and VMs.
 
 ### 👉 What it means
 
 An application works on a developer's machine but fails on another system.
-
----
 
 ### ❗ Why this happens
 
@@ -143,8 +125,6 @@ Different environments:
 * Dependencies mismatch
 * Configuration issues
 * Environment Variable Missing
-
----
 
 #### ✅ Example
 
@@ -162,8 +142,6 @@ Node.js = v14
 
 ➡️ App may break
 
----
-
 ### ❌ Impact
 
 * Deployment failures
@@ -179,7 +157,7 @@ To solve all these problems, **Containerization or OS-level virtualization techn
 
 ### 👉 What is Containerization
 
-> Package the application **with everything it needs** (code + dependencies + libraries) into a **lightweight software (container)**, so it runs **anywhere consistently**.
+> Package the application **with everything it needs** (code + dependencies + libraries) into a **lightweight isolated environment (container)**, so it runs **anywhere consistently**.
 
 Containerization, **Standardizes the runtime environment** by **bundling everything (app + dependencies)** into containers.
 

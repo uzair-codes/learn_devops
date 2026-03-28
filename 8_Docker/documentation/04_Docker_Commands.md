@@ -50,12 +50,6 @@ docker images
 * Image ID
 * Size
 
-### 🔹 Remove Image
-
-```bash
-docker rmi <image_id>
-```
-
 ### 🔹 Build Image from Dockerfile
 
 ```bash
@@ -64,6 +58,18 @@ docker build -t myapp /DockerfilePath
 ```
 
 👉 `-t` = tag (name of image)
+
+### 🔹 Rename Image
+
+```bash
+docker tag old_img_name new_img_name
+```
+
+### 🔹 Remove Image
+
+```bash
+docker rmi <image_id>
+```
 
 ---
 

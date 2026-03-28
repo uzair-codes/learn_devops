@@ -4,8 +4,7 @@
 
 ### 👉 Simple Definition
 
-> Containerization or OS-level virtualization is a method of packaging an application **with all its dependencies** so it can run **anywhere consistently**.
-
+Containerization or OS-level virtualization is a method of packaging an application **with all its dependencies** so it can run **anywhere consistently**.
 OS‑level virtualization (or containerization) allows applications to share the host OS kernel instead of running a separate guest OS like in traditional hardware-level virtualization (hypervisor technology). This design allows to create software computers (i.e. Containers) that are lightweight, fast, and portable, while keeping them isolated from one another at application level.
 
 ---
