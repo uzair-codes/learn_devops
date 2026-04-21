@@ -272,3 +272,5 @@ kubectl apply -f .
 
 If you want next:
 👉 I can teach **Service, NodePort, ClusterIP, Ingress (how apps are exposed)**
+
+---
