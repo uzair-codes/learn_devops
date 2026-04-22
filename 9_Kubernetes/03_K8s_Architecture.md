@@ -21,9 +21,9 @@ Kubernetes Cluster
 
 The **Control Plane** is responsible for:
 
-👉 Making decisions
-👉 Managing the entire cluster
-👉 Ensuring everything is working correctly
+* 👉 Making decisions
+* 👉 Managing the entire cluster
+* 👉 Ensuring everything is working correctly
 
 ### 🔸 Simple Understanding
 
@@ -227,7 +227,7 @@ Examples:
 | etcd          | Memory         |
 | Scheduler     | Decision maker |
 | Controller    | Supervisor     |
-| Worker Node   | Worker 🖐️     |
+| Worker Node   | Worker 🖐️      |
 | Kubelet       | Executor       |
 | Runtime       | Engine         |
 | Kube-Proxy    | Network        |
