@@ -1,4 +1,4 @@
-# Section 1: Limitations of Docker in Production (Why Kubernetes?)
+# Limitations of Docker in Production (Why Kubernetes?)
 
 Docker changed the way we build and run applications. It allows developers to package applications with all dependencies into containers and run them anywhere.
 

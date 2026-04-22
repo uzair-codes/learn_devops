@@ -1,4 +1,4 @@
-# Section 2: What is Kubernetes & How It Solves These Problems
+# What is Kubernetes & How It Solves These Problems
 
 ## 🔹 What is Kubernetes?
 

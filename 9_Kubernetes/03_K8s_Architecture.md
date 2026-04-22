@@ -1,4 +1,4 @@
-# Section 3: Kubernetes Architecture (Control Plane & Worker Nodes)
+# Kubernetes Architecture (Control Plane & Worker Nodes)
 
 ## 🔹 Big Picture First (Very Important)
 
