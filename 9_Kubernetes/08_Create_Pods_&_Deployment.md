@@ -1,7 +1,3 @@
-I’ll teach this in a **clear, practical flow**:
-
----
-
 # 🚀 1. Directly Running Pods & Deployments (CLI)
 
 ## 📦 Create Pod (not recommended in real-world)
@@ -24,23 +20,17 @@ kubectl get pods
 kubectl create deployment myapp --image=nginx
 ```
 
----
-
-## 🔁 Scale Deployment
+### 🔁 Scale Deployment
 
 ```bash
 kubectl scale deployment myapp --replicas=3
 ```
 
----
-
-## 🔄 Update Image
+### 🔄 Update Image
 
 ```bash
 kubectl set image deployment/myapp nginx=nginx:1.25
 ```
-
----
 
 ## ❌ Delete
 
@@ -74,8 +64,6 @@ spec:
   # desired state
 ```
 
----
-
 ## 🔹 Meaning:
 
 * **apiVersion** → version of API
@@ -100,15 +88,11 @@ spec:
         - containerPort: 80
 ```
 
----
-
 ## ▶️ Run it:
 
 ```bash
 kubectl apply -f pod.yaml
 ```
-
----
 
 ## ❌ Delete:
 
@@ -144,8 +128,6 @@ spec:
             - containerPort: 80
 ```
 
----
-
 ## 🔥 Important Concepts
 
 ### 🔹 replicas
@@ -160,15 +142,11 @@ spec:
 
 * Blueprint of Pod
 
----
-
 ## ▶️ Apply:
 
 ```bash
 kubectl apply -f deployment.yaml
 ```
-
----
 
 ## 🔁 Update YAML (change image):
 
@@ -261,16 +239,3 @@ kubectl apply -f .
 
 ---
 
-# 🧠 Final Understanding
-
-* CLI = quick testing
-* YAML = real-world usage
-* Pod = single unit
-* Deployment = manages Pods
-
----
-
-If you want next:
-👉 I can teach **Service, NodePort, ClusterIP, Ingress (how apps are exposed)**
-
----
