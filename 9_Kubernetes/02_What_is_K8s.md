@@ -25,8 +25,8 @@ Instead of you manually:
 
 ### 🔸 One-Line Understanding
 
-> Docker = Runs containers
-> Kubernetes = Manages containers at scale
+* Docker = Runs containers
+* Kubernetes = Manages containers at scale
 
 ---
 
