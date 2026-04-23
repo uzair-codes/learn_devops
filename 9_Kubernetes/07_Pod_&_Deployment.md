@@ -99,8 +99,8 @@ Pods are **not meant to be used directly in production**
 
 Let’s be very clear:
 
-👉 Pods are **temporary (ephemeral)**
-👉 They can crash, disappear, or get replaced anytime
+* 👉 Pods are **temporary (ephemeral)**
+* 👉 They can crash, disappear, or get replaced anytime
 
 If you use Pods directly:
 
