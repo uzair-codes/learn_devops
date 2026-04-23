@@ -57,7 +57,7 @@ All containers inside a Pod:
 * Share storage
 
 
-* Usually One Pod contains One Container (usually)
+* Usually One Pod contains One Container
 
 **Sometimes:**
 
