@@ -2,14 +2,14 @@
 
 A **Pod** in **Kubernetes** is:
 
-> 👉 The **smallest deployable unit** in Kubernetes
-> 👉 A wrapper around one or more containers
-> A Pod = A group of containers running together on the same machine
+* 👉 The **smallest deployable unit** in Kubernetes
+* 👉 A wrapper around one or more containers
+* A Pod = A group of containers running together on the same machine
 
 ### 🔸 Important Point (Very Important)
 
-👉 Kubernetes does NOT run containers directly
-👉 It runs **Pods**, and Pods contain containers
+* 👉 Kubernetes does NOT run containers directly
+* 👉 It runs **Pods**, and Pods contain containers
 
 ---
 
