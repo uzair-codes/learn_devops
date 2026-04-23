@@ -132,6 +132,7 @@ A **Deployment** in **Kubernetes** is:
 **🔸 One-Line Understanding**
 
 > Pod = Worker
+
 > Deployment = Manager of workers
 
 ---
