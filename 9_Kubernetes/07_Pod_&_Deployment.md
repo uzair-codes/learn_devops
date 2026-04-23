@@ -6,7 +6,7 @@ A **Pod** in **Kubernetes** is:
 * 👉 A wrapper around one or more containers
 * A Pod = A group of containers running together on the same machine
 
-### 🔸 Important Point (Very Important)
+### 🔸 Important Point
 
 * 👉 Kubernetes does NOT run containers directly
 * 👉 It runs **Pods**, and Pods contain containers
@@ -33,35 +33,17 @@ Pods provide:
 
 👉 Containers inside a Pod behave like they are on the **same machine**
 
----
-
-## 🔹 Pod Structure
-
-A Pod can contain:
-
-```id="q9a3rf"
-Pod
-├── Container 1
-├── Container 2 (optional)
-└── Shared Resources
-     ├── Network (IP)
-     └── Storage (Volumes)
-```
-
-### 🔸 Key Idea
-
 All containers inside a Pod:
 
 * Talk via `localhost`
 * Share the same IP
 * Share storage
 
-
-* Usually One Pod contains One Container
+Usually One Pod contains One Container
 
 **Sometimes:**
 
-👉 One Pod can contain Multiple containers
+👉 One Pod can contain Multiple co-dependent containers
 
 ### 🔸 Example
 
@@ -95,36 +77,13 @@ Each Pod gets:
 
 ---
 
-## 🔹 Pod Lifecycle
-
-Pods are **temporary (ephemeral)**
-
-### 🔸 What does that mean?
-
-* Pods can be:
-
-  * Created
-  * Destroyed
-  * Recreated anytime
-
-👉 You should NEVER rely on a Pod being permanent
-
-### 🔸 Example
-
-If a Pod crashes:
-
-👉 Kubernetes creates a **new Pod**
-(Not restart the same one in all cases)
-
----
-
 ## 🔹 Important Limitation of Pods ❗
 
 Pods are **not meant to be used directly in production**
 
 ### 🔸 Why?
 
-* Pods can die anytime
+* Pods are **temporary (ephemeral)**, they can die anytime
 * No auto-scaling
 * No auto-healing (alone)
 
