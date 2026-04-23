@@ -118,17 +118,6 @@ If a Pod crashes:
 
 ---
 
-## 🔹 Pod States (Simplified)
-
-| State     | Meaning              |
-| --------- | -------------------- |
-| Pending   | Pod is being created |
-| Running   | Pod is working       |
-| Failed    | Pod crashed          |
-| Succeeded | Task completed       |
-
----
-
 ## 🔹 Important Limitation of Pods ❗
 
 Pods are **not meant to be used directly in production**
